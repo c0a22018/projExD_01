@@ -13,12 +13,14 @@ def main():
 
     tmr = 0
     by = 0
+
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
         tmr += 1
-        screen.blit(bg_img, [0, 0])
+        screen.blit(bg_img, [-(tmr % 1600), 0])
+        screen.blit(bg_img, [1600-(tmr % 1600), 0])
         
 
         screen.blit(kk_images[by % 2], [300, 200])
